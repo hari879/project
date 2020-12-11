@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'calc'
 ]
 
@@ -51,10 +52,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'student.urls'
-import os
+
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES = [
-
     { 
         'BACKEND':'django.template.backends.jinja2.Jinja2',
         'DIRS': ['%s/jinjatemplates/'% (PROJECT_DIR),],
@@ -62,7 +62,7 @@ TEMPLATES = [
         },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'proj_template')],
+        'DIRS': [os.path.join(BASE_DIR, 'proj_template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,6 +89,9 @@ DATABASES = {
         'PASSWORD':'',
         'HOST':'localhost',
         'PORT':'3306',
+        'OPTIONS':{
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
+        }
         
     }
 }

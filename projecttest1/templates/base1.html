@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <title>{%block title %}{% endblock%}</title>
+        <style>
+            ul {
+              list-style-type: none;
+              margin: 0;
+              width: 100%;
+              padding: 20px;
+              overflow: hidden;
+              background-color: #2A2B2DFF;
+            }
+            
+            li {
+              float: left;
+            }
+            
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            li a:hover {
+              background-color:#D9594EFF	 ;
+            }
+            </style>
+        
+    </head>
+    <body>
+        <center><h1> Admin Portal</h1></center>
+        <ul>
+            <li>
+        <a href="{% url 'home' %}" class="link_button1">Home</a></li>
+       
+        {% if user.is_authenticated %}
+       <li>
+        <a href="{% url 'upload_materials' %}" class="link_button2">Upload Materials</a> </li>
+       <li>
+       <a href="{% url 'materials' %}" class="link_button3">Available Materials</a></li>
+        <li>
+       <a href="{% url 'companySignup' %}" class="link_button5"> +Add Company  </a> </li> 
+        <li >
+        <a href="{% url 'CompanyList' %}" class="link_button6"> CompanyList</a>    </li>
+        <li>
+            <a  href="{% url 'logout' %}" class="link_button4">Log out    </a> </li>
+          <li >
+        </ul>
+        <br><br>
+        <strong> You are logged in as {{user.username}} </strong>
+        {% else %}
+        <div class="log">
+        <ul>
+        <li><a href="{% url 'signup' %}" class="link_button7" >Sign Up</a></li>
+        <li><a href="{% url 'login' %}" class="link_button8" >Log in</a> </li>
+        {% endif %}
+    </ul>
+        </div>
+        </body>
+        {%block content %}
+        {%endblock%}
+</html>

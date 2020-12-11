@@ -1,0 +1,24 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<style>
+body {
+  background-color: #ADEFD1FF;
+}
+.container
+{
+background-color:  rgb(34, 38, 44);
+}
+</style>
+<center>
+  <h2>Homepage</h2>
+  <div  class=container style="width:300px;height:250px;border:1px solid #000;">
+    <div style="color: #D9594EFF">
+  <p>Welcome to My Site, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}! </p>
+  <p>
+	  <strong>Total users registered:</strong>{{count}}
+  </p>
+  </div>
+  </div>
+</center>
+{% endblock %}

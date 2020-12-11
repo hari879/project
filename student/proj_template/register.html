@@ -1,0 +1,22 @@
+<html>
+<head>
+	<TITLE>Register</TITLE>
+
+</head>
+<body>
+	<h1>Registaration form</h1>
+	<form method="POST"  >
+		{% csrf_token %}
+		
+		First name    :    <input type="text" placeholder="First name"name="firstname">
+		Last name     :    <input type="text" placeholder="Last name" name="lastname"><br>
+		Email         :    <input type="email"  placeholder="Email"name="email"><br>
+		password  :         <input type="password"  placeholder="Confirm password" name="cpassword"><br>
+		username: <input type="text" placeholder="id" name="id" size="10"><br>
+
+               <input type="submit" name="submit">
+
+        
+	</form>
+</body>
+</html>

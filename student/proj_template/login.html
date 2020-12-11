@@ -130,17 +130,19 @@ header{
          <div class="col-md-5 align-self-center">
             <h4   style="color:white; text-align: center; padding-bottom: 20px";class="text-themecolor">LOGIN</h4>
         </div>
-          <form class="new" method="POST">
-            {% csrf_token %}
-          <input type="text" placeholder="User name" name="email"/>
-          <input type="password" placeholder="password" name="password"/>
-          <button type="submit">LOGIN</button>
-            {% if messages %}
-            {% for message in messages %}
-            <h2 style="color :green;">{{message}}</h2>
-            {% endfor %}
-            {% endif %}
-          </form>
+        <form  method="POST" >
+        {% csrf_token %}
+         
+        <input type="text" placeholder="User name" name="email" required/>
+        <input type="password" placeholder="password" name="password"/>
+        <button type="submit">LOGIN</button>
+        {% if messages %}
+        {% for message in messages %}
+        <h2 style = "color:green;">{{message}}</h2>
+        {% endfor %}
+        {% endif %}
+     
+        </form>
        </div>
        <footer class="footer text-center">
          © 2020 ECE Project Team-Doremon, KLGUG-Swecha

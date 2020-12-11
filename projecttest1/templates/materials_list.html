@@ -1,0 +1,60 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<style>
+body {
+  background-color: #ADEFD1FF;
+}
+</style>
+<h2>materials</h2>
+  <table  class="table mb-0" align="center" border="2px solid black" style="width:500px; ">
+    <style>
+    
+    table {
+     
+      border-collapse: collapse;
+      width: 50%;
+    
+    }
+    
+    th, td {
+      text-align: center;
+      border: 3px solid black;
+      padding: 10px;
+    }
+    
+    tr:nth-child(even) {background-color: w3-teal;}
+    </style>
+      <tr>
+    <style>
+    h2 {
+      text-align: center;
+    }
+    </style>
+    <style>
+    h2{
+      letter-spacing: 1px;
+    }
+    </style>
+    <thead>
+      <tr>
+        <th>FileName </th>
+        <th>Download</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for Material in materials %}
+        <tr>
+          <td>{{ Material.FileName }}</td>
+          <td>
+            <a href= "{{ Material.pdf.url }}" class="btn btn-primary btn-sm" target="_blank">
+              Download PDF
+            </a>
+          </td>
+        </tr>
+        
+      {% endfor %}
+    </tbody>
+  </table>
+{%endblock %}

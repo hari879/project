@@ -1,20 +1,17 @@
-from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.shortcuts import render
+from .models import login_Details
 from django.contrib import messages
-from django.contrib.auth.models import User , auth
-from calc.models import login_Details
 # Create your views here.
+
+        
 def login(request):
-    return render(request,'login.html')
-
-def newPage(request):
-    if request.method =='POST':
-        email=request.POST['email']
-        password = request.POST['password']
-        user = User.objects.create_user(username=email,password=password)
-        user.save()
-        print('createrd')
-        return redirect('/')
+    if request.method == 'POST':
+        if request.POST.get('email') and request.POST.get('password') :
+            saverecord=login_Details()
+            saverecord.email=request.POST.get('email')
+            saverecord.password=request.POST.get('password')
+            saverecord.save()
+            messages.success(request,'succesfull..!')
+            return render(request,'login.html')
     else:
-        return render(request,'login.html')        
-
+            return render(request,'login.html')

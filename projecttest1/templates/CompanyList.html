@@ -1,0 +1,57 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<h2><strong>CompanyList</strong></h2>
+<table  class="table mb-0" align="center" border="2px solid black" style="width:300px;">
+      <style>
+            body {
+                  background-color: #ADEFD1FF;
+                }
+      table {
+       
+        border-collapse: collapse;
+        width: 50%;
+      }
+      
+      th, td {
+        text-align: center;
+        border: 3px solid black;
+        padding: 10px;
+      }
+      
+      tr:nth-child(even) {background-color: w3-teal;}
+      </style>
+        <tr>
+      <style>
+      h2 {
+        text-align: center;
+      }
+      </style>
+      <style>
+      h2{
+        letter-spacing: 1px;
+      }
+      </style>
+      <thead>
+        <tr>
+          
+          <th>Company Name</th>
+          <th>Link</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+      {% for CompanyData in liste %}
+      <tr>
+        
+        <td>{{ CompanyData.Company_name }}</td>
+        <td>
+            <a href="{% url 'CompanyData' CompanyData.Company_name %}">{{ CompanyData.Company_name }}<br></a>
+          </a>
+        </td>
+      </tr>
+      
+    {% endfor %}
+  </tbody>
+</table>
+{%endblock %}

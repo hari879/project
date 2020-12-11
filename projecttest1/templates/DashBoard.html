@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+        <style>
+            *{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body{
+  background: #fff;
+}
+
+.wrapper .header{
+  z-index: 1;
+  background: #22242A;
+  position: fixed;
+  width: calc(100% - 0%);
+  height: 70px;
+  display: flex;
+  top: 0;
+}
+
+.wrapper .header .header-menu{
+  width: calc(100% - 0%);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.wrapper .header .header-menu .title{
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.wrapper .header .header-menu .title span{
+  color: #4CCEE8;
+}
+
+.wrapper .header .header-menu .sidebar-btn{
+  color: #fff;
+  position: absolute;
+  margin-left: 240px;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s;
+  transition-property: color;
+}
+
+.wrapper .header .header-menu .sidebar-btn:hover{
+  color: #4CCEE8;
+}
+
+.wrapper .header .header-menu ul{
+  display: flex;
+}
+
+.wrapper .header .header-menu ul li a{
+  background: #fff;
+  color: #000;
+  display: block;
+  margin: 0 10px;
+  font-size: 18px;
+  width: 34px;
+  height: 34px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  transition-property: background, color;
+}
+
+.wrapper .header .header-menu ul li a:hover{
+  background: #4CCEE8;
+  color: #fff;
+}
+
+.wrapper .sidebar{
+  z-index: 1;
+  background: #2F323A;
+  position: fixed;
+  top: 70px;
+  width: 250px;
+  height: calc(100% - 9%);
+  transition: 0.3s;
+  transition-property: width;
+  overflow-y: auto;
+}
+
+.wrapper .sidebar .sidebar-menu{
+  overflow: hidden;
+}
+
+.wrapper .sidebar .sidebar-menu .profile img{
+  margin: 20px 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.wrapper .sidebar .sidebar-menu .profile p{
+  color: #bbb;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.wrapper .sidebar .sidebar-menu .item{
+  width: 250px;
+  overflow: hidden;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn{
+  display: block;
+  color: #fff;
+  position: relative;
+  padding: 25px 20px;
+  transition: 0.3s;
+  transition-property: color;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn:hover{
+  color: #4CCEE8;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn i{
+  margin-right: 20px;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn .drop-down{
+  float: right;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu{
+  background: #3498DB;
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.3s;
+  transition-property: background, max-height;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu a{
+  display: block;
+  position: relative;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 15px;
+  padding: 20px;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu a:hover{
+  background: #55B1F0;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu a:not(last-child){
+  border-bottom: 1px solid #8FC5E9;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu i{
+  padding-right: 20px;
+  font-size: 10px;
+}
+
+.wrapper .sidebar .sidebar-menu .item:target .sub-menu{
+  max-height: 500px;
+}
+
+.wrapper .main-container{
+  width: (100% - 250px);
+  margin-top: 70px;
+  margin-left: 250px;
+  padding: 15px;
+  background: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHkAqQMBIgACEQEDEQH/xAAYAAADAQEAAAAAAAAAAAAAAAAAAgMBB//EABoQAQEBAQEBAQAAAAAAAAAAAAABAhIRITH/xAAXAQEBAQEAAAAAAAAAAAAAAAACAQAE/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwDpQAdTjAAZgJDSGkSsSZNMqTJplCxPlvKnLeWbEuRyryOU1cR5Zytyy5XUxCxli1yW5XWxIGuSrogAMwADMAAzA+YzMUkSqJDzIkPIhSMmTzLZDzI6uEmW8qTLfE1cS5HKvI8bVxG5ZcrXJbldTEbkli9hLF1ELCai+onqKNiN+A+oQhAAZg2Rh8xqxsxTMJmK5gnGyKZjMw+YJRsyeQSHkQoJlvJpDTIlIn4OVfGcs2I3JbFrC2MiNidi9ieoQ1HUTsWqeoUFHUT0tpPShSAUEgUynFMoymVMp5VyJnzFMwmVMjTh4fMLlTIlDSHkZDxKUZ4yxQukVOp2K1PSwanqJ2KaTpDU9J6Uqeig1LSelanogqV/Q2/rCERTKZ8pjK5UylmqZo01cqZqWapEpRXKkqOapKJxbNNNIymmhxdV6ZaTr4z1sXTWp6rbSWqjNJ6NanqqNLpPR7U9UoFJpLR9VPVIaW/rACENlYGZXNUlRlPKJSr5p5UZTyoUWlPKjNGlHC1eVvSM031F1bpnSfXxnTNqlpbSdMumxtbanaLolpSALSaotJqqlZqp6rbSFAAAVgAGYQ8pBGZaU8qEp5oSlXmjTSE0aaTFWmjdIzTekxZVeh0l0OmxdUui3ROi3S4mnuiWlui3S4mmuk9aZaWqOi0AKgADMAAzAAMwbKwNWPNfDTSUNEXT9N6IEbT9DogZtP0y6Kyq2tui2+soaIAArAAMwADM/9k=)no-repeat;
+  background-size: cover;
+  height: 100vh;
+  transition: 0.3s;
+}
+
+.wrapper.collapse .sidebar{
+  width: 70px;
+}
+
+.wrapper.collapse .sidebar .profile img,
+.wrapper.collapse .sidebar .profile p,
+.wrapper.collapse .sidebar a span{
+  display: none;
+}
+
+.wrapper.collapse .sidebar .sidebar-menu .item .menu-btn{
+  font-size: 23px;
+}
+
+.wrapper.collapse .sidebar .sidebar-menu .item .sub-menu i{
+  font-size: 18px;
+  padding-left: 3px;
+}
+
+.wrapper.collapse .main-container{
+  width: calc(100% - 70px);
+  margin-left: 70px;
+}
+
+.wrapper .main-container .card{
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+        </style>
+		<meta charset="utf-8">
+		<title>KLEF/Student/Dashboard</title>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+
+		<!--wrapper start-->
+		<div class="wrapper">
+			<!--header menu start-->
+			<div class="header">
+				<div class="header-menu">
+					<div class="title">Student<span>Board</span></div>
+					<div class="sidebar-btn">
+						<i class="fas fa-bars"></i>
+					</div>
+					<ul>
+						<li><a href="#"><i class="fas fa-bell"></i></a></li>
+						<li><a href="#"><i class="fas fa-power-off"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<!--header menu end-->
+			<!--sidebar start-->
+			<div class="sidebar">
+				<div class="sidebar-menu">
+					<center class="profile">
+						<img src="data:image/jpeg;base64,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" alt="">
+						<p>Student Name</p>
+					</center>
+					<li class="item">
+						<a href="#" class="menu-btn">
+							<i class="fas fa-desktop"></i><span>Dashboard</span>
+						</a>
+					</li>
+					<li class="item" id="profile">
+						<a href="/profile" class="menu-btn">
+							<i class="fas fa-user-circle"></i><span>Profile <i class="fas fa-chevron-down drop-down"></i></span>
+						</a>
+						<div class="sub-menu">
+							<a href="#"><i class="fas fa-address-card"></i><span>Info</span></a>
+						</div>
+					</li>
+					<li class="item" id="messages">
+						<a href="#messages" class="menu-btn">
+							<i class="fa fa-book fa-fw"></i><span>Tests/Material<i class="fas fa-chevron-down drop-down"></i></span>
+						</a>
+						<div class="sub-menu">
+							<a href="#"><i class="fas fa-envelope"></i><span>Practice Material</span></a>
+							<a href="#"><i class="fas fa-envelope-square"></i><span>Tests</span></a>
+							<a href="#"><i class="fas fa-exclamation-circle"></i><span>Results</span></a>
+						</div>
+					</li>
+					<li class="item" id="settings">
+						<a href="#settings" class="menu-btn">
+							<i class="fas fa-search"></i><span>Job Oppurtunities <i class="fas fa-chevron-down drop-down"></i></span>
+						</a>
+						<div class="sub-menu">
+							<a href="#"><i class="fas fa-list"></i><span>Ongoing</span></a>
+							<a href="#"><i class="fas fa-language"></i><span>Upcoming</span></a>
+						</div>
+					</li>
+				</div>
+			</div>
+			<!--sidebar end-->
+			<!--main container start-->
+			<div class="main-container">
+			</div>
+			<!--main container end-->
+		</div>
+		<!--wrapper end-->
+
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$(".sidebar-btn").click(function(){
+				$(".wrapper").toggleClass("collapse");
+			});
+		});
+		</script>
+
+	</body>
+</html>

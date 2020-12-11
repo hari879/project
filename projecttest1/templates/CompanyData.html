@@ -1,0 +1,38 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<style>
+        h2
+        {
+                color: brown;
+        }
+        p
+        {
+                color: coral;
+        }
+        h3
+        {
+                color: brown;
+        }
+</style>
+<center><h1>JOB PROFILE</h1>
+
+
+<h2>Company Name :<span style="color:coral">{{ companyd.Company_name}} </span></h2>
+<h2>About Company :<span style="color:coral">{{ companyd.About_company }}</span></h2>
+<h2>Company Link : <span style="color:coral">
+{{ companyd.Company_link }}</span></h2>
+
+<h2>JobRole : <span style="color:coral">{{ companyd.Jobrole }}</span></h2>
+<h2>Job Responsibilities</h2>
+<p>{{ companyd.Job_responsilities }}</p>
+<h2>Job Salary : <span style="color:coral">{{ companyd.Job_Salary }}</span></h2>
+<h3>Eligible CGPA  :  <span style="color:coral">{{ companyd.Eligibility_cgpa }} </span></h3>
+<h3>Eligible Branches  :  <span style="color:coral">{{ companyd.Eligibility_branches }} </span></h3>
+<h3>Eligible Passout Batchs  : <span style="color:coral">{{  companyd.Eligibility_Passedout_Batchs}} </span></h3>
+<h3>Education Gap  : <span style="color:coral">{{  companyd.Eligibility_education_gap}} </span></h3>
+<h3>Start Date  : <span style="color:coral">{{  companyd.application_start_date}} </span></h3>
+<h3>End Date  :  <span style="color:coral">{{  companyd.application_end_date}} </span></h3>
+<br>
+</center> 
+{%endblock %}

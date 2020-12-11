@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dashboard</title>
+</head>
+<body>
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="download.png">
+			</div>
+			<ul>
+				<li><a href="#">hai</a></li>
+				<li><a href="#">how</a></li>
+				<li><a href="#">are</a></li>
+				<li><a href="#">you</a></li>
+			</ul>
+		</div>
+		<div class="title">
+			<h1> KLEF Placement Portal </h1>
+		</div>
+		<div class="icon">
+			<a href="/LoginPage" class="btn"><img src="student.png" height="80px" width="80px" alt="student"></a>
+			<a href="/LoginPage" class="btn"><img src="faculty.png"height="80px" width="80px" alt="Tpo"></a>
+		</div>
+	</header>
+</body>
+</html>
+<style >
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: verdana;
+	}
+	header{
+		background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(hakuna.jpg);
+		height: 100vh;
+		background-size: cover;
+		background-position: center;
+	}
+	ul{
+		float: right;
+		list-style-type: none;
+		margin-top: 25px;
+	}
+	ul li{
+		display: inline-block;
+	}
+	ul li a{
+		text-decoration: none;
+		color: #fff;
+		padding: 3px 17px;
+		border: 2px solid transparent;
+		transition: 1s ease;
+	}
+	ul li a:hover{
+		background-color: #fff;
+		color: #000;
+	}
+	/*ul li.active a{
+		background-color: #00BFFF;
+		color: #000;
+	}*/
+	.logo img{
+		padding-top: 10px;
+		float: left;
+		width: 200px;
+		height: auto;
+
+	}
+	.main{
+		max-width: 1200px;
+		margin: auto;
+	}
+	.title{
+	  	position: absolute;
+		top: 40%;
+		left: 20%;
+		transition: translate(-50%,-50%);
+	}
+	.title h1{
+		color: white;
+		font-size: 70px;
+	}
+	.icon{
+		position: absolute;
+		top: 60%;
+		left: 40%;
+		transition: translate(-50%,-50%);
+	}
+	.btn{
+		/*border: 1px solid #fff;*/
+		padding: auto;
+		color: white;
+		text-decoration: none;
+	}
+	.btn:hover
+	{
+		background-color: #fff;
+		color: #000;
+		transition: 0.7s ease;
+	}
+</style>
