@@ -26,14 +26,14 @@
       }
 </style>
 
- <h2>Sign Up</h2> 
+ <h2>Notification Page</h2> 
  
      <form method="POST" class=container style="padding: left 100px;">
-         {% csrf_token %}
+         {%csrf_token %}
          
          {{form.as_p}}
         
-         <button class="button"type="submit"> +Add Company</button>
+         <button class="button"type="submit"> Send Notification</button>
      </form>   
      
 {% endblock %}

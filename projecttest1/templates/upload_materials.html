@@ -3,7 +3,7 @@
 {% block content %}
 <style>
     body {
-      background-color: #ADEFD1FF;
+      background-color: #7abecc;
     }
     .container
     {
@@ -28,11 +28,14 @@
         color: white;
         box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
       }
+      h2{
+        margin-top: 50px;
+      }
     </style>
     <center>
 
 <h2>Upload materials</h2>
-<div  class=container style="width:350px;height:200px;border:1px solid #000;">
+<div  class=container style="width:350px;height:250px;border:1px solid #000;">
     <div style="color: #D9594EFF">
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
